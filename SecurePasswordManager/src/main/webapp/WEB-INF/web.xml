@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    web.xml - Deployment Descriptor for Secure Password Manager
+    
+    Configures:
+    1. Session timeout (5 minutes)
+    2. SessionFilter for route protection (mapped to /*)
+    3. Welcome file (login.jsp)
+    4. Error pages for 404 and 500 errors
+    
+    Note: Servlets use @WebServlet annotations, so they don't need
+    explicit servlet mappings here. The filter is configured here
+    because it needs to intercept ALL requests (/*).
+-->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <display-name>Secure Password Manager</display-name>
+    <description>
+        A secure web-based password manager built with Java Servlets, JSP, and JDBC.
+        Uses SHA-256 hashing, AES encryption, and session-based authentication.
+    </description>
+    
+    <!-- ==================== Session Configuration ==================== -->
+    <!-- Timeout in minutes. Session expires after 5 minutes of inactivity. -->
+    <session-config>
+        <session-timeout>5</session-timeout>
+    </session-config>
+    
+    <!-- ==================== Authentication Filter ==================== -->
+    <!-- Intercepts ALL requests and checks for valid session. -->
+    <!-- Public resources (login, register, CSS) are whitelisted in the filter. -->
+    <filter>
+        <filter-name>SessionFilter</filter-name>
+        <filter-class>com.util.SessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SessionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!-- ==================== Welcome File ==================== -->
+    <!-- Default page when accessing the root URL -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <!-- ==================== Error Pages ==================== -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    
+</web-app>

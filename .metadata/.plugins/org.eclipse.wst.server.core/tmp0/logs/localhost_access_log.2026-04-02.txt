@@ -1,0 +1,12 @@
+127.0.0.1 - - [02/Apr/2026:09:32:40 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:32:41 +0530] "GET /SecurePasswordManager/ HTTP/1.1" 200 2974
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:32:41 +0530] "GET /SecurePasswordManager/css/style.css HTTP/1.1" 200 18988
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:32:41 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:32:52 +0530] "POST /SecurePasswordManager/LoginServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:32:53 +0530] "GET /SecurePasswordManager/dashboard.jsp HTTP/1.1" 200 5235
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:32:56 +0530] "GET /SecurePasswordManager/LogsServlet HTTP/1.1" 200 16600
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:33:06 +0530] "GET /SecurePasswordManager/VaultServlet?action=add HTTP/1.1" 200 8063
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:33:09 +0530] "GET /SecurePasswordManager/VaultServlet?action=list HTTP/1.1" 200 11049
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:33:18 +0530] "GET /SecurePasswordManager/dashboard.jsp HTTP/1.1" 200 5235
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:33:20 +0530] "GET /SecurePasswordManager/LogoutServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Apr/2026:09:33:20 +0530] "GET /SecurePasswordManager/login.jsp?success=Logged+out+successfully. HTTP/1.1" 200 3114
